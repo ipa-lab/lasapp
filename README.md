@@ -2,15 +2,29 @@
 
 # Language-Agnostic Static Analysis of Probabilistic Programs
 
-For replication package of [ASE2024 paper](https://dl.acm.org/doi/pdf/10.1145/3691620.3695031) see [580e2fe](https://github.com/lasapp/lasapp/tree/ASE2024).
+A language-agnostic static analysis framework (LASAPP) designed to detect statistical, constraint, and structural bugs in probabilistic programs prior to runtime execution. The project features high-level program analysis APIs leveraging data/control-flow abstractions, symbolic execution, and abstract interpretation across 6 probabilistic programming languages (Gen, Turing, PyMC, Pyro, BeanMachine, Stan). Formally proven sound and validated on 200+ real-world codebases to eliminate cryptic runtime errors and lower the required domain expertise for statistical debugging.
 
-Since then, we have added a backend based on the CFG representation outlined in the [Appendix](https://zenodo.org/records/15857114/files/LASAPP_supplementary_material.pdf).
-
-We have implemented transpilations from Pyro and Stan to this CFG IR.
-
-To make LASAPP more usable, we also provide a rudimentary [VSCode extension](vscode-extension/README.md).
+We also provide a rudimentary [VSCode extension](vscode-extension/README.md).
 
 ![](vscode-extension/vscode-ext-screenshot.png)
+
+For replication package of [ASE2024 paper](https://dl.acm.org/doi/pdf/10.1145/3691620.3695031) see [580e2fe](https://github.com/lasapp/lasapp/tree/ASE2024).
+
+Since then, we have added a backend based on the CFG representation outlined in the [Appendix](https://zenodo.org/records/15857114/files/LASAPP_supplementary_material.pdf) and support for Stan.
+
+
+Cite [ASE2024 paper](https://dl.acm.org/doi/pdf/10.1145/3691620.3695031):
+```bibtex
+@inproceedings{boeck2024lasapp,
+  title={Language-Agnostic Static Analysis of Probabilistic Programs},
+  author={B{\"o}ck, Markus and Schr{\"o}der, Michael and Cito, J{\"u}rgen},
+  booktitle={Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering},
+  pages={78--90},
+  year={2024}
+}
+```
+
+---
 
 Files Overview:
 ```
@@ -278,16 +292,3 @@ Also available for `turing`, `gen`, `pyro`, `pymc`, and `beanmachine`.
 python3 main.py experiments/examples/guide_pyro.py -a guide-proposal
 ```
 Also available for `gen`.
-
-
-## Citation
-[ASE2024 paper](https://dl.acm.org/doi/pdf/10.1145/3691620.3695031)
-```
-@inproceedings{boeck2024,
-  title={Language-Agnostic Static Analysis of Probabilistic Programs},
-  author={B{\"o}ck, Markus and Schr{\"o}der, Michael and Cito, J{\"u}rgen},
-  booktitle={Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering},
-  pages={78--90},
-  year={2024}
-}
-```
